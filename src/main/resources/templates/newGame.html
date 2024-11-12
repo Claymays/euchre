@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Game</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Htmx Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+</head>
+<body>
+    <section>
+        <form th:action="@{/board}">
+            <label for="game_type">
+                <select id="game_type" name="game_type">
+                    <option value="standard">Standard</option>
+                    <option value="double">Double Deck</option>
+                </select>
+            </label>
+            <input type="submit" value="Start">
+        </form>
+    </section>
+</body>
+</html>
