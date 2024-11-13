@@ -10,6 +10,11 @@
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
 </head>
 <body>
-
+    <section>
+        <!--/*@thymesVar id="player" type="com.mays.euchre.data.Player"*/-->
+        <th:block th:each="card : ${player.getHand()}">
+            <img th:src="@{images/${card.image()}}" th:alt="|${card.rank()} ${card.suit()}|">
+        </th:block>
+    </section>
 </body>
 </html>

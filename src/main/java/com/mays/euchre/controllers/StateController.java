@@ -5,8 +5,6 @@ import com.mays.euchre.services.StateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
-
 @RestController("/state")
 @RequiredArgsConstructor
 public class StateController {
@@ -22,4 +20,8 @@ public class StateController {
         return stateService.playCard(player, card);
     }
 
+    @PostMapping("/bid")
+    public State bid(@RequestParam Team bidder, @RequestParam Card card) {
+        return stateService.callBid(bidder, card);
+    }
 }

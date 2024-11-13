@@ -1,4 +1,4 @@
 package com.mays.euchre.data;
 
-public record Card(Suit suit, Rank rank) {}
+public record Card(Suit suit, Rank rank, String image) {}
 

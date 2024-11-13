@@ -12,15 +12,10 @@
 </head>
 <body>
 <section>
-  <form th:action="@{/session/new}">
-    <label for="game_type">
-      <select id="game_type" name="game_type">
-        <option value="standard">Standard</option>
-        <option value="double">Double Deck</option>
-      </select>
-    </label>
-    <input type="submit" value="Start">
-  </form>
+  <!--/*@thymesVar id="session" type="com.mays.euchre.data.Session"*/-->
+  <div th:ws-connect="@{/session/${session.getSessionId()}}">
+    <th:block th:insert="~{fragments/board :: board}"></th:block>
+  </div>
 </section>
 </body>
 </html>

@@ -15,8 +15,11 @@ public class AppConfig {
     public List<Card> deck() {
         var deck = new ArrayList<Card>();
         for (var suit : Suit.values()) {
+            if (suit.equals(Suit.HIGH) || suit.equals(Suit.LOW)) continue;
             for (var rank : Rank.values()) {
-                deck.add(new Card(suit, rank));
+                var image = "%s-%s.svg"
+                        .formatted(suit, rank);
+                deck.add(new Card(suit, rank, image));
             }
         }
         return deck;
