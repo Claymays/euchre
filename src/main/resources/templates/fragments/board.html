@@ -12,9 +12,7 @@
 <body>
     <section>
         <!--/*@thymesVar id="player" type="com.mays.euchre.data.Player"*/-->
-        <th:block th:each="card : ${player.getHand()}">
-            <img th:src="@{images/${card.image()}}" th:alt="|${card.rank()} ${card.suit()}|">
-        </th:block>
+        <span th:text="|Session id: ${session.sessionId()}|"></span>
     </section>
 </body>
 </html>

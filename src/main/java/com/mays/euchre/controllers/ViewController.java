@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class ViewController {
     private final StateService stateService;
-    @GetMapping("new")
+
+    @GetMapping("/")
     public String index() {
-        return "newGame";
+        return "index";
     }
 
     @GetMapping("board")

@@ -21,4 +21,9 @@ public class Session {
         this.teams = new ArrayList<>();
         this.state = new State();
     }
+
+    public Session addPlayer(String name) {
+        this.players.add(new Player(name));
+        return this;
+    }
 }

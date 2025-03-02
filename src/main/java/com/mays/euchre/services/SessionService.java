@@ -3,6 +3,7 @@ package com.mays.euchre.services;
 import com.mays.euchre.data.Session;
 import com.mays.euchre.data.Player;
 import com.mays.euchre.data.Team;
+import jakarta.annotation.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,8 @@ import java.util.List;
 @Service
 
 public class SessionService {
-    private static Session session;
-    private StateService stateService;
+    private static Session      session;
+    private final  StateService stateService;
 
     @Autowired
     public SessionService(StateService stateService) {
@@ -22,7 +23,8 @@ public class SessionService {
         this.stateService = stateService;
     }
 
-    public Session joinSession(int sessionId, Player player) {
+    public Session joinSession(int sessionId, @Nullable String name) {
+        var player = new Player(name);
         if (!session.getPlayers().contains(player) &&
              session.getPlayers().size() < 4 &&
              session.getSessionId() == sessionId) {

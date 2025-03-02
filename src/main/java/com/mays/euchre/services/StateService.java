@@ -103,12 +103,12 @@ public class StateService {
 
     }
 
-    private static boolean resolveHand() {
-        if (state.getBiddingTeam().getTricks() != state.getBid()) {
-            state.getBiddingTeam().setScores();
-        }
-        return state.getBiddingTeam().getTricks() >= state.getBid();
-    }
+//    private static boolean resolveHand() {
+//        if (state.getBiddingTeam().getTricks() != state.getBid()) {
+////            state.getBiddingTeam().setScores();
+//        }
+//        return state.getBiddingTeam().getTricks() >= state.getBid();
+//    }
 
     private static LinkedList<Player> orderPlayers() {
         var players = new LinkedList<Player>();

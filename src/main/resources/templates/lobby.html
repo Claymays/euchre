@@ -11,11 +11,13 @@
   <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/ws.js"></script>
 </head>
 <body>
-<section>
-  <!--/*@thymesVar id="session" type="com.mays.euchre.data.Session"*/-->
-  <div th:ws-connect="@{/session/${session.getSessionId()}}">
-    <th:block th:insert="~{fragments/board :: board}"></th:block>
-  </div>
+<section id="lobby">
+<!--  /*@thymesVar id="session" type="com.mays.euchre.data.Session"*/-->
+<!--  <th:block th:each="player : ${session.players}">-->
+<!--    <p th:text="player.name()"></p>-->
+<!--  </th:block>-->
+  <p>Hello</p>
+<!--    <th:block th:insert="~{fragments/board :: board}"></th:block>-->
 </section>
 </body>
 </html>

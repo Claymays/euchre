@@ -20,8 +20,8 @@ public class StateController {
         return stateService.playCard(player, card);
     }
 
-    @PostMapping("/bid")
-    public State bid(@RequestParam Team bidder, @RequestParam Card card) {
-        return stateService.callBid(bidder, card);
-    }
+//    @PostMapping("/bid")
+//    public State bid(@RequestParam Team bidder, @RequestParam Card card) {
+//        return stateService.callBid(bidder, card);
+//    }
 }
